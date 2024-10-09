@@ -97,6 +97,8 @@ class ClaimGQLType(DjangoObjectType):
             "claimed": ["exact", "lt", "lte", "gt", "gte"],
             "approved": ["exact", "lt", "lte", "gt", "gte"],
             "visit_type": ["exact"],
+            "patient_outcome": ["exact"],
+            "visit_reason": ["exact"],
             "attachments_count__value": ["exact", "lt", "lte", "gt", "gte"],
             **prefix_filterset("icd__", DiagnosisGQLType._meta.filter_fields),
             **prefix_filterset("admin__", ClaimAdminGQLType._meta.filter_fields),
