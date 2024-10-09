@@ -264,6 +264,11 @@ class ClaimInputType(OpenIMISMutation.Input):
     items = graphene.List(ClaimItemInputType, required=False)
     services = graphene.List(ClaimServiceInputType, required=False)
 
+    patient_outcome = graphene.String(max_length=250, required=False)
+    visit_reason = graphene.String(max_length=500, required=False)
+    inbound_referral_date = graphene.Date(required=False)
+    referral_id = graphene.Int(required=False)
+
 
 
 class CreateClaimInputType(ClaimInputType):

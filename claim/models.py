@@ -245,6 +245,11 @@ class Claim(core_models.VersionedModel, core_models.ExtendableModel):
         db_column='AuditUserIDProcess', blank=True, null=True)
     care_type = models.CharField(db_column='CareType', max_length=4, blank=True, null=True)
 
+    patient_outcome = models.CharField(db_column='PatientOutcome', max_length=250, blank=True, null=True)
+    visit_reason = models.CharField(db_column='VisitReason', max_length=500, blank=True, null=True)
+    inbound_referral_date = fields.DateField(db_column='InboundReferralDate', blank=True, null=True)
+    referral_id = models.IntegerField(db_column='ReferralID', blank=True, null=True)
+
     # row_id = models.BinaryField(db_column='RowID', blank=True, null=True)
 
     class Meta:

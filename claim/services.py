@@ -315,6 +315,8 @@ class ClaimReportService(object):
             "claimed": claim.claimed,
             "services": [formatClaimService(s) for s in claim.services.all()],
             "items": [formatClaimItem(i) for i in claim.items.all()],
+            "patientOutcome": claim.patient_outcome,
+            "visitReason": claim.visit_reason,
         }
 
 
